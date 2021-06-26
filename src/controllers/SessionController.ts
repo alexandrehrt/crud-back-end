@@ -1,10 +1,8 @@
 import { compare } from "bcryptjs";
-import cookie from "cookie";
 import { Request, Response } from "express";
 import { sign } from "jsonwebtoken";
 import { getRepository } from "typeorm";
 
-import auth from "../config/auth";
 import User from "../models/User";
 
 class SessionController {

@@ -16,7 +16,6 @@ class EmployeeController {
     const employeeRepository = getRepository(Employee);
     const { id } = request.params;
     const employee = await employeeRepository.findOne(id);
-    console.log({ employee });
 
     return response.json(employee);
   }
@@ -87,7 +86,7 @@ class EmployeeController {
     const employeeRepository = getRepository(Employee);
     const { id } = request.params;
     const results = await employeeRepository.delete(id);
-    return response.send(results);
+    return response.status(200).send(results);
   }
 }
 
